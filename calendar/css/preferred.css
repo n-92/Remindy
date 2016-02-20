@@ -1,0 +1,87 @@
+/*
+ * FullCalendar v1.5.3 Print Stylesheet
+ *
+ * Include this stylesheet on your page to get a more printer-friendly calendar.
+ * When including this stylesheet, use the media='print' attribute of the <link> tag.
+ * Make sure to include this stylesheet IN ADDITION to the regular fullcalendar.css.
+ *
+ * Copyright (c) 2011 Adam Shaw
+ * Dual licensed under the MIT and GPL licenses, located in
+ * MIT-LICENSE.txt and GPL-LICENSE.txt respectively.
+ *
+ * Date: Mon Feb 6 22:40:40 2012 -0800
+ *
+ */
+ /* Events
+-----------------------------------------------------*/
+
+/* CSS */
+
+body {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+}
+
+#calendar {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.fc-event-skin {
+	//background: none !important;
+  //color: #000 !important;
+  cursor: pointer;
+  font-size: 0.88em;
+  border-radius: 1px;
+  border: 1px solid red;
+  background-color: rgba(208,35,64,0.81);
+  font-weight: 400;
+  margin-bottom: 2px;
+  margin-top: 2px;
+	}
+	
+/* horizontal events */
+	
+.fc-event-hori {
+	border-width: 0 0 1px 0 !important;
+	border-bottom-style: dotted !important;
+	border-bottom-color: #000 !important;
+	padding: 1px 0 0 0 !important;
+	}
+	
+.fc-event-hori .fc-event-inner {
+	border-width: 0 !important;
+	padding: 0 1px !important;
+	}
+	
+/* vertical events */
+.fc-event-vert {
+	border-width: 0 0 0 1px !important;
+	border-left-style: dotted !important;
+	border-left-color: #000 !important;
+	padding: 0 1px 0 0 !important;
+	}
+	
+.fc-event-vert .fc-event-inner {
+	border-width: 0 !important;
+	padding: 1px 0 !important;
+	}
+	
+.fc-event-bg {
+	display: none !important;
+	}
+	
+.fc-event .ui-resizable-handle {
+	display: none !important;
+	}
+
+.fc-header-title > h2{
+  font-size: 1.5em;
+}
+
+.submit{
+margin: 10px auto 10px;
+
+}
