@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once 'loginManager.php';
 header('Content-Type: application/json');
 
@@ -31,6 +32,7 @@ function loginUser(){
 	
 	if($login_status){
 		$return['login_status'] = 'success';
+		$_SESSION["user_name"] = $id;
 	}
 	else{
 		$return['login_status'] = 'fail';

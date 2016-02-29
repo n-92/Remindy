@@ -39,6 +39,8 @@ $(".form-signin").submit(function(evt){
               //Display success message banner 
                clearLabels();
                $('<div class="alert alert-success"> <strong>Login Successful!</strong> </div>').appendTo('.the-return');
+               window.location.href = "../user_dashboard.php";
+
             }
             else{
               clearLabels();
