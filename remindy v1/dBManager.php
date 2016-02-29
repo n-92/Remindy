@@ -1,6 +1,7 @@
 <?php
   include_once 'dB_mysql_adapter.php';
   include_once 'dB_mysql.php';
+  include_once 'config.php';
 
   class DBManager{
 
@@ -9,7 +10,11 @@
     	$this->sqlObject = new DbmysqlAdapter(new Dbmysql());
     }
 
-    public function checkDataExists($data){
+    public function checkDataExists($type,$data){
+      if ($type == 'id'){
+        $return = $this->sqlObject->checkDataExists(TBL_USER,$data);  
+        return $return;
+      }
 
     }
 
@@ -37,4 +42,3 @@
 
 
   }
-?>

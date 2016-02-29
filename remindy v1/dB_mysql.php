@@ -15,7 +15,15 @@
 	      }else {
 	          echo "Table created successfully\n";
 	      }
-	      
+	      $this->close();
+    }
+
+    public function executeCountQuery($sql){
+    	
+		$result = $this->query($sql);
+		$rows = $result->fetchArray();
+		return $rows[0];
+
     }
 
 

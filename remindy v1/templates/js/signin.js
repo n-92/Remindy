@@ -22,7 +22,7 @@ $(".form-signin").submit(function(evt){
   var _id_or_email = $(id_or_email).val();
   var _pass = $(input_pass).val();
 	var data = {
-	  "action": "test_login"
+	  "action": "login"
 	};
   
   //JQuery form data validation code
@@ -31,11 +31,11 @@ $(".form-signin").submit(function(evt){
       	$.ajax({
       	  type: "POST",
       	  dataType:'json',
-      	  url: "_php/login_validate.php", //Relative or absolute path to response.php file
+      	  url: "../login.php", //Relative or absolute path to response.php file
       	  data: data
         }).done( function(data) {	    	
 
-            if (data['msg'] === 'success' ){
+            if (data['login_status'] === 'success' ){
               //Display success message banner 
                clearLabels();
                $('<div class="alert alert-success"> <strong>Login Successful!</strong> </div>').appendTo('.the-return');

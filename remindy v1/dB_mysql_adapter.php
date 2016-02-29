@@ -40,5 +40,24 @@ EOF;
      
     }
 
+    public function checkDataExists($tbl_name, $data){
+        
+        $sql = "";
+        if ($tbl_name == TBL_USER){
+          $sql =<<<EOF
+          SELECT COUNT(*) FROM tbl_user WHERE ID='$data';
+EOF;
+          
+        }
+
+        $result = $this->dbmysql->executeCountQuery($sql);
+        
+        if ($result>0){
+          return True; //the record does not exist
+        }
+        return False;
+        
+    }
+
   }
 ?>
