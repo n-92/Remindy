@@ -5,9 +5,9 @@ P.S : Latest Working Folder is remindy_v1
 
 
 
-SQL Query Updates
+#SQL Query Updates
 
-#1. Joining Three Tables 
+##1. Joining Three Tables 
 ------------------------
 ```sql
 SELECT t_u.*, t_t.*
