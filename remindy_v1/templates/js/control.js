@@ -75,7 +75,22 @@ $(function(){
           if (result){
             $('#calendar').fullCalendar('removeEvents', calEvent.id);
              events.splice(_.indexOf(events, _.findWhere(events, { id : calEvent.id })), 1);
-             //alert(events);
+             
+             $.ajax({
+                type: 'POST',
+                url: 'delete.php',
+                dataType:'json',
+                data:{e:calEvent.id},
+                success: function(data){
+                  alert(data['msg']);
+              }
+
+              }).done(function(data){
+                  //alert(data['msg']); 
+              });
+
+
+
           }
       }); 
     },

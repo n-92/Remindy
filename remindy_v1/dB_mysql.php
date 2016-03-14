@@ -21,6 +21,7 @@ class Dbmysql extends SQLite3{
 
     $result = $this->query($sql);
     $rows = $result->fetchArray();
+    
     return $rows[0];
 
   }
