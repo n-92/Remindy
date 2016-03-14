@@ -10,7 +10,7 @@
 	}
 	
   if (is_ajax()) {
-    test_function();
+    populate_json();
     insertTaskRecord();
   }
 
@@ -21,7 +21,7 @@
     
     foreach ($json_decoded_event as $jde){
         
-      if (!($taskMgr->checkTaskExists($jde->title))){
+      if (!($taskMgr->checkTaskTitleExists($jde->title))){
         $taskMgr->insertTaskRecord($jde->id,$jde->title, $jde->dateTimeOfReminder , $jde->dateTimeOfCreation, $jde->description, $jde->start,$jde->reminder_status); 
         $taskMgr->insertUserTaskRecord( $_SESSION["user_name"], $jde->id); 
       }
@@ -30,7 +30,7 @@
   
   
 	
-  function test_function(){
+  function populate_json(){
       //print($_POST['e']);
     $incoming = $_POST['e'];
     $json_decoded_event = json_decode($incoming);

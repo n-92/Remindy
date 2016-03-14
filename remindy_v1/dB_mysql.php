@@ -20,7 +20,7 @@ class Dbmysql extends SQLite3{
    public function executeCountQuery($sql){
 
     $result = $this->query($sql);
-    $rows = $result->fetchArray();
+    $rows = $result->fetchArray();  
     return $rows[0];
 
   }

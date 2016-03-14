@@ -33,9 +33,19 @@ class TaskManager {
     }
 
 
-	public function checkTaskExists($title){
+	public function checkTaskTitleExists($title){
 		$existance = $this->dBManager->checkDataExists('title',$title);
 		return $existance;
 	}
+
+    public function checkTaskIdExists($id){
+        $existance = $this->dBManager->checkDataExists('taskid',$id);
+        return $existance;
+    }
+
+    public function deleteTaskRecordById($id){
+        $deleteStatus = $this->dBManager->deleteTaskRecord('taskid',$id);
+        return $deleteStatus;
+    }
 
 }

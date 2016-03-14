@@ -12,11 +12,14 @@
 
     public function checkDataExists($type,$data){
       if ($type == 'id'){
-        $return = $this->sqlObject->checkDataExists(TBL_USER,$data);  
+        $return = $this->sqlObject->checkDataExists(TBL_USER,'id',$data);  
         return $return;
       }else if ($type == 'title'){
-        $return = $this->sqlObject->checkDataExists(TBL_TASKS,$data);  
+        $return = $this->sqlObject->checkDataExists(TBL_TASKS,'title',$data);  
         return $return;
+      }else if ($type == 'taskid'){
+        $return = $this->sqlObject->checkDataExists(TBL_TASKS,'taskid',$data);
+        return $return;  
       }
 
     }
@@ -26,10 +29,6 @@
     }
   	
   	public function updateData($data){
-
-  	}
-
-  	public function deleteData($data){
 
   	}
 
@@ -43,6 +42,15 @@
 
     public function insertUserTaskRecord($userId, $taskId){
      $this->sqlObject->insertUserTaskRecord($userId, $taskId);
+    }
+
+
+    public function deleteTaskRecord($type,$data){
+      if ($type == 'taskid'){
+        $return = $this->sqlObject->deleteTaskRecord(TBL_TASKS,'id',$data);  
+        return $return;
+      }
+
     }
 
   	public function getData($query){

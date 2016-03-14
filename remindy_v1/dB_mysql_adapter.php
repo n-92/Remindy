@@ -46,6 +46,28 @@ EOF;
         
     }
 
+    public function deleteTaskRecord($tbl_name,$type,$data){
+    
+      $sql="";
+
+      if ($tbl_name == TBL_TASKS and $type=='id'){
+        $sql =<<<EOF
+        DELETE FROM tbl_tasks 
+        WHERE ID = '$data';
+EOF;
+
+        $this->dbmysql->executeQuery($sql);
+
+        $sql =<<<EOF
+        DELETE FROM tbl_user_has_task 
+        WHERE TASKID = '$data';
+EOF;
+        return $this->dbmysql->executeQuery($sql);
+    }
+
+
+      
+    }
 
     public function insertUserRecord($id, $givenName, $email, $phone, $pass){
       
@@ -54,7 +76,7 @@ EOF;
       VALUES ('$id', '$givenName', '$email', '$phone', '$pass' );
 EOF;
 
-      $this->createUserRecordTable();          
+      //$this->createUserRecordTable();          
       $this->dbmysql->executeQuery($sql);
      
     }
@@ -82,23 +104,23 @@ EOF;
       $this->dbmysql->executeQuery($sql);
     }
 
-    public function checkDataExists($tbl_name, $data){
+      public function checkDataExists($tbl_name, $type,$data){
         
         //$this->createTaskRecordTable();
         $sql = "";
-
-        if ($tbl_name == TBL_USER)
+        if ($tbl_name == TBL_USER and strcmp($type,'id')==0)
           $sql =<<<EOF
           SELECT COUNT(*) FROM tbl_user WHERE ID='$data';
 EOF;
-
-
-        if ($tbl_name == TBL_TASKS)
+        if ($tbl_name == TBL_TASKS and strcmp($type,'title')==0)
           $sql =<<<EOF
           SELECT COUNT(*) FROM tbl_tasks WHERE TITLE='$data';
 EOF;
+        if ($tbl_name == TBL_TASKS) 
+          $sql =<<<EOF
+          SELECT COUNT(*) FROM tbl_tasks WHERE ID='$data';
+EOF;
           
-
         $result = $this->dbmysql->executeCountQuery($sql);
         
         if ($result>0){
@@ -109,4 +131,3 @@ EOF;
     }
 
   }
-
