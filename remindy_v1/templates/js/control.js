@@ -14,7 +14,7 @@ $(function(){
 
   var events = [];
 
-  $.getJSON('results.json')
+  $.getJSON('user_json/'+session_user+'.json')
       .done(function (data) {
       if (!data)
         events = [];  
@@ -36,14 +36,14 @@ $(function(){
       dataType:'json',
       data:{e:events_json},
       success: function(data){
-        //alert(data['msg']);
+        alert(data['msg']);
       }
 
     }).done(function(data){
         //alert(data['msg']); 
     });
 
-    //alert("Button clicked");
+    
   });
 
   $('#calendar').fullCalendar({

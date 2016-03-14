@@ -10,7 +10,7 @@
 	}
 	
   if (is_ajax()) {
-    //test_function();
+    test_function();
     insertTaskRecord();
   }
 
@@ -48,7 +48,7 @@
     }
     //$events['events'] = $store_data;
 
-    $fp = fopen('results.json', 'w');
+    $fp = fopen('user_json/'.$_SESSION["user_name"].'.json', 'w');
     fwrite($fp, json_encode($store_data));
     fclose($fp);
 

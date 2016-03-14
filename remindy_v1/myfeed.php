@@ -1,4 +1,5 @@
 <?php
+session_start();
 //--------------------------------------------------------------------------------------------------
 // This script reads event data from a JSON file and outputs those events which are within the range
 // supplied by the "start" and "end" GET parameters.
@@ -12,7 +13,7 @@
 require 'utils.php';
 header('Content-Type: application/json');
 // Read and parse our events JSON file into an array of event data arrays.
-$json = file_get_contents('results.json');
+$json = file_get_contents('user_json/'.$_SESSION["user_name"].'.json');
 $input_arrays = json_decode($json,true);
 
 // Accumulate an output array of event data arrays.
