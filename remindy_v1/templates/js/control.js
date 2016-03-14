@@ -3,8 +3,6 @@
  * Author : Aung Naing Oo 
  * 
  * */
- 
-
 $(function(){
 
   var date = new Date();
@@ -75,7 +73,7 @@ $(function(){
           if (result){
             $('#calendar').fullCalendar('removeEvents', calEvent.id);
              events.splice(_.indexOf(events, _.findWhere(events, { id : calEvent.id })), 1);
-             
+
              $.ajax({
                 type: 'POST',
                 url: 'delete.php',
