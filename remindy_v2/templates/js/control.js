@@ -126,7 +126,7 @@ $(function(){
                               // '</div> ' +
 
                               '<div class="col-md-2"> ' +
-                                '<input type="text" value="" id="remind_time" id="remind_time" placeholder="2:15PM"/><br><br>' +                                                                  
+                                '<input type="text" value="" id="remind_time" id="remind_time" placeholder="2:15 PM"/><br><br>' +                                                                  
                               '</div> ' +
                           '</div> ' +
 
