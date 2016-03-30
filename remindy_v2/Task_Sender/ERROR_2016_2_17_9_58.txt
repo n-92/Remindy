@@ -1,0 +1,4 @@
+
+Exception Log : class javax.mail.MessagingException
+Unknown SMTP host: smtp.gmail.com
+java.net.UnknownHostException: smtp.gmail.com

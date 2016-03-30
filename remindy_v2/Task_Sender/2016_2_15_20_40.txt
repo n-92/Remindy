@@ -1,0 +1,4 @@
+
+Exception Log : class java.net.MalformedURLException
+no protocol: ?EAPI URL?/submission/send_sms/2/2.0
+null

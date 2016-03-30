@@ -1,0 +1,4 @@
+
+Exception Log : class javax.mail.SendFailedException
+Invalid Addresses
+com.sun.mail.smtp.SMTPAddressFailedException: 553 5.1.2 The recipient address <12345> is not a valid RFC-5321 address. qh8sm8624329pac.40 - gsmtp
